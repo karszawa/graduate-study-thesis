@@ -102,9 +102,9 @@ Potential Causality Modelの1つの計算結果は有限このHappened Before Mo
 そこで、各イベントに整数あるいは整数のベクトルで表現される時刻印を付与し、それをイベントの発生順序の判別に用いる。
 それが論理時計である。
 
-論理時計には様々な種類が存在するが、H-DASではDirect Dependency Clockを用いている。
+論理時計には様々な種類が存在するが、H-DASではDirect-Dependency Clockを用いている。
 この時計を用いる場合、プロセスは通信のたびにメッセージにただ1つの整数だけを付与するため、通信パケットの大きさがほとんど変化しない。
-以下にDirect Dependency ClockのアルゴリズムをJava言語により記述する。
+以下にDirect-Dependency ClockのアルゴリズムをJava言語により記述する。
 
 <!-- https://books.google.co.jp/books?id=2pKCnc6-UAEC -->
 
@@ -141,7 +141,7 @@ public class DirectDependencyClock {
 }
 \end{lstlisting}
 
-論理時計にDirect Dependency Clockを用いるならば、プロセスのクラスはDirectDependencyClockをメンバに持つことになる。
+論理時計にDirect-Dependency Clockを用いるならば、プロセスのクラスはDirectDependencyClockクラスをメンバに持つことになる。
 この時計を用いるとき、状態sにあるプロセス$P_i$と状態tにあるプロセス$P_j$を考え、状態sは状態tより因果的に後の状態なのかどうかを知りたければ、
 $P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le clock_j[i]$が成り立つかどうかを見れば良い。
 もちろん、状態sの方が後の状態なのであれば、$clock_j[j] \le clock_i[j]$が成り立つ。
