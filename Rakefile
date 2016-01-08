@@ -5,7 +5,7 @@ name = "thesis"
 task :build do
   Dir.glob("src/*.md").map do |md|
     tex = md.sub(".md", ".tex")
-    `pandoc #{md} -f markdown -t latex --smart -o #{tex}`
+    `pandoc --filter pandoc-crossref -f markdown -t latex --smart #{md} -o #{tex}`
   end
 	
   puts `latexmk src/#{name}.tex`
