@@ -32,6 +32,6 @@ end
 task :eps do
   Dir.glob('src/fig/**/*.png').each do |png|
     eps = png.sub(".png", ".eps")
-    p `convert #{png} eps2:#{eps}`
+    `convert #{png} eps2:#{eps}`
   end
 end

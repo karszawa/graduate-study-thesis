@@ -26,7 +26,7 @@
 本研究室では平成18年度からH-DAS(H - Distributed Algorithms Simulator)という分散アルゴリズムシミュレータが開発されてきた。
 H-DASは分散アルゴリズムを記述するためのデスクリプタというプログラムと、出来上がった分散アルゴリズムをシミュレートするシミュレータというプログラムからなる。
 
-図はデスクリプタの外観である。
+図\ref{fig:descriptor}はデスクリプタの外観である。
 このプログラムを用いてユーザは
 
 1. アルゴリズムのモデル情報の入力
@@ -36,10 +36,22 @@ H-DASは分散アルゴリズムを記述するためのデスクリプタとい
 
 という工程を行い、シミュレータで利用するためのdasという拡張子のファイルを生成する。
 
-図はシミュレータの外観である。
+図\ref{fig:simulator}はシミュレータの外観である。
 このプログラムでデスクリプタにより生成したdasファイルを読み込みシミュレーションを開始する。
 以下で簡単に機能の紹介を行う。
 詳細な使用方法の説明は第5章で行う。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{./src/fig/descriptor.eps}
+	\caption{H-DASのDescriptorの外観 \label{fig:descriptor}}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{./src/fig/simulator.eps}
+	\caption{H-DASのSimulatorの外観 \label{fig:simulator}}
+\end{figure}
 
 ## 機能
 
