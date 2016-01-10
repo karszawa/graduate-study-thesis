@@ -29,12 +29,6 @@ DAJは教育目的に作成された分散アルゴリズムシミュレータ�
 DAJが開発される以前は、PVM\cite{pvm}やMPI\cite{mpi}などの高機能だが複雑で巨大なライブラリが多かった。
 このようなライブラリは低レイアの技術的な問題を含み、また内部の情報が隠蔽されていて観察できないなど、教育目的の利用には適さなかったためDAJが開発された。
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{./src/fig/daj.eps}
-	\caption{DAJの外観}
-\end{figure}
-
 図\ref{fig:daj}はDAJの外観である。
 画面を四等分しているブロックのそれぞれが分散システムを構成するプロセスを表していて、それぞれが各プロセスの状態を表している。
 また、各プロセスの状態の下にあるRequestやReplyなどのボタンで、各プロセスのイベントを実行できる。
@@ -63,7 +57,13 @@ Graphics on/off
 - アルゴリズムの実行例の保存
 - アルゴリズムの実行例の再生
 - イベントの実行履歴のテキスト表示
-- 一部のアルゴリズムに限られるが、プロセスの関係のグラフ化
+- プロセスの関係のグラフ化(一部のアルゴリズムに限られる)
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/daj.eps}
+	\caption{DAJの外観 \label{fig:daj}}
+\end{figure}
 
 # 本研究室で開発されてきた分散アルゴリズムシミュレータ
 
@@ -87,20 +87,45 @@ H-DASは分散アルゴリズムを記述するためのデスクリプタとい
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{./src/fig/descriptor.eps}
+	\includegraphics[width=0.8\linewidth]{./src/fig/descriptor.eps}
 	\caption{H-DASのDescriptorの外観 \label{fig:descriptor}}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{./src/fig/simulator.eps}
+	\includegraphics[width=0.8\linewidth]{./src/fig/simulator.eps}
 	\caption{H-DASのSimulatorの外観 \label{fig:simulator}}
 \end{figure}
 
 ## 機能
 
-- いろいろ
+昨年度までに開発されたH-DASの主な機能について述べる。
+
+- ユーザがJava言語によるアルゴリズムを記述できる。
+- 記述されたアルゴリズムのコンパイルが可能、コンパイル成功時にクラスファイルとアルゴリズムに関するファイル(拡張子 das)を作成する。
+- プロセスの個数を1から1000までの間で設定できる。
+- メッセージを自動で配送できる。
+- メッセージの通信遅延を模倣する。
+- 通信遅延の上限は0から100まで設定できる。
+- メッセージの総数を集計し表示する。
+- 通信路のFIFO性を設定できる。
+- 実行したシミュレーションの履歴をテキスト形式で保存できる。
+- 実行したシミュレーションの履歴をコマンド形式で保存できる。
+- コマンド形式で保存されたシミュレーションの再現できる。
+- イベント発生時にテキストエリアに結果を表示する。
+- 空イベントを実行できる。
+- シミュレータとデスクリプタのヘルプマニュアル(英語)を参照できる。
+- 実行したイベントを取り消し、元の状態に戻すことができる。
+- プロセスの故障を模倣できる。
+- コータリーの選択ができる。
 
 ## 問題点
 
-- いろいろ
+本研究で改善を加えたH-DASの問題点を述べる。
+
+- シミュレーションを開始する際の設定画面が多く、一覧性がない。
+- イベントの発生回数が表示されないので、シミュレーションが開始してからの進度がわかりにくい。
+- 大量のイベントを発生させ続けるとプログラムが強制終了する。
+- 通信路にFIFO性を設定したときに通信遅延の制約が守られない。
+- 大量のプロセスからなるシステムをシミュレートすると実行速度が極端に低下する。
+- 特定の環境でプロセスの色付けがなされない。
