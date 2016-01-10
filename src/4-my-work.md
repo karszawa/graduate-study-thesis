@@ -5,6 +5,29 @@
 
 ## シミュレーション開始時の設定画面の統合 
 
+H-DASは平成18年から開発されてきたソフトウェアである。
+そのため、初期のヴァージョンと比べると多数の機能が存在し、シミュレーションの自由度も向上している。
+しかし、多くの機能が追加されたことで、シミュレーションを開始する前に設定しなければならない項目も増大してしまった。
+今やその項目はプロセス数・故障確率・通信遅延上限・コータリーの要否・使用するコータリー・FIFO性の有無の6項目となった(図\ref{fig:presimlation-windows-old})。
+このように多くの項目を別個で設定するのはユーザにとって無意味な手間であるし、シミュレーションを開始する際に項目のチェックができないのでミスを生みやすい。
+このような事情により、設定画面を統合しユーザがストレスなくシミュレーションを開始できるようにする必要があった。
+
+図\ref{fig:presimulation-window-new}は改良されたシミュレータの統合された設定画面である。
+このように、シミュレーションを開始する際の設定項目は一目瞭然となった。
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/presimulation-windows-old.eps}
+	\caption{従来のシミュレータで入力する必要のあったウィンドウの一覧 \\
+		各ウィンドウが順番に表示されるので一覧性が低く、また前の項目に戻ることは出来ない。\label{fig:presimulation-windows-old}}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/presimulation-window-new.eps}
+	\caption{改良されたシミュレータで1つに統合された設定画面 \label{fig:presimulation-window-new}}
+\end{figure}
+
 ## イベント発生回数の表示
 
 # 不具合修正
