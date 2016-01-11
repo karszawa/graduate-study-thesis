@@ -4,6 +4,7 @@ name = "thesis"
 
 task :build do
   Dir.glob("src/*.md").map do |md|
+		transform(md)
     tex = md.sub(".md", ".tex")
     `pandoc -f markdown -t latex --smart #{md} -o #{tex}`
   end
