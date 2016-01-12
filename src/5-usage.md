@@ -37,9 +37,22 @@ H-DASは、アルゴリズムを記述するためのデスクリプタとシミ
 
 メニューから[File]→[New]を選択し、出現するダイアログでシステムディレクトリを指定する。
 次に出現するダイアログでは作成するアルゴリズムのシステム名を入力する。
-そうすると、図\ref{fig:descriptor}のような画面になる。
+そうすると、図\ref{fig:descriptor-inuse}のような画面になる。
 ここで、画面左のツリーからノードを選択すると、画面右にモデル情報タブが表示されるので、画面下部の[Add]、[Modify]、[Delete]ボタンからモデル情報を編集する。
 
+モデルはアルゴリズムごとにVariableモデル、Stateモデル、Eventモデル、Parameterモデル、及びMessageモデルがある。
+Eventモデルの入力時に受信イベントで受信するメッセージの種別は、Messageモデルとして入力したものから選択することになる。
+
+デフォルトのパラメータとして、Variableモデルには「Health」、Stateモデルには「tranquil」、[critical」「failed」、
+Parameterモデルには「processID」、「numberOfProcess」、「FailureProbability」、「coterie」がある。
+特に、Stateモデルの「failed」とParameterモデルのすべてパラメータはシステムに必須であるため変更・削除してはならない。
+
+Parameterモデルのパラメータの変数の型として選択できるのはラッパークラスのInteger型とDouble型のみであるので注意が必要である。
+また、Messageモデルのパラメータにはint型やdouble型などの基本データ型が使用できる。
+
+モデル情報の入力が完了したら、メニューから[Function]→[Output a skeleton code]を選択し出現するダイアログでスケルトンコードを生成したいアルゴリズムを選択する。
+これによりシステムディレクトリ及び、その内部にスケルトンコードが生成される。
+ユーザはプロセス処理の記述に移行する前に、入力したモデル情報に誤りがないかを確認するため、図\ref{fig:build-button}をクリックしビルドを実行することが推奨される。
 
 ## プロセス処理の記述
 
