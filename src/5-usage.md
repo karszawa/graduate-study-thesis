@@ -1,5 +1,9 @@
 # 動作環境
 
+H-DASはJavaの実行環境JRE(Java Runtime Environment)\cite{jre}で動作するプログラムである。
+また、ユーザが記述したアルゴリズムをコンパイルするためにはJDK(Java Development Kit)8\cite{jdk}が必要となる。
+JREもJDKもOracle社のWebサイトからダウンロードすることができる。
+
 # インストール
 
 # アンイストール
