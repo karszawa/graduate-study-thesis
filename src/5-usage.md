@@ -54,13 +54,65 @@ Parameterモデルのパラメータの変数の型として選択できるの�
 これによりシステムディレクトリ及び、その内部にスケルトンコードが生成される。
 ユーザはプロセス処理の記述に移行する前に、入力したモデル情報に誤りがないかを確認するため、図\ref{fig:build-button}をクリックしビルドを実行することが推奨される。
 
+![ビルドボタン]
+
 ## プロセス処理の記述
 
+プロセス処理の記述は、スケルトンコードの作成によってシステムディレクトリ内に生成されたxxxProcess.java(xxxはアルゴリズム名)ファイルの内容を編集することによって行う。
+記述する内容は、デスクリプタで入力したイベントごとにその動作と、イベントの前提条件が整っているかどうかを表すpreconditionメソッド、
+受信イベントにおける対応メッセージが受信バッファに存在するか否かという条件である。
+
+また、デッドロックを自動的に検出できるようにするには、各メッセージが送信されるときに返信を要求するかどうかを明確にする必要がある。
+メッセージが返信を要求するならば、スケルトンコードのxxxMessage.java(xxxはメッセージ名)の内容のうち、
+
+```
+public class xxxMessage extends Message implements Serializable
+```
+
+という行を
+
+```
+public class xxxMessage extends WantResponse implements Serializable
+```
+
+と書き換えなければならない。
+返信を要求しないメッセージについてはそのままでよい。
+
+ユーザがプロセス処理を記述するにあたって使用することのできるメソッドのうち主要なものを表\ref{tbl:usable-method}に示す。
+
+\begin{table}[htbp]
+	\centering
+	\caption{ユーザが使用可能な主なメソッド \label{tbl:usable-method}}
+  \begin{tabular}{|l|l|l|}
+		メソッド名 & 所有クラス & 処理内容 \\ \hline
+		getProcessID() & MutualExclusionAlgorithm & プロセス番号の取得 \\ \hline
+		getNumberOfProcess() & MutualExclusionAlgorithm & プロセスの総数の取得 \\ \hline
+		sendEvent() & DirectDependencyClock & ベクトル時計の自身の時刻成分を1増分 \\ \hline
+		dispatchMessage() & MessagePost & 第1引数で指定したプロセス番号に、第2引数で指定したメッセージを送信 \\ \hline
+		dispathToOthers() & MutualExclusionAlgorithm & メソッドを呼び出したプロセス以外の全プロセスに、dispathMessageを呼び出して第2引数で指定したメッセージを送信 \\ \hline
+		getXXX() & メッセージモデルのクラス & メッセージモデルの保持変数を取得 \\ \hline
+		receiveEvent() & DirectDependencyClock & 受信したメッセージについて、ベクトル時計の送信者の時刻成分と自身の時刻成分を比較して更新 \\ \hline
+		getAlgorithmName() & MutualExclusionAlgorithm & プロセスのアルゴリズム名を取得 \\ \hline	
+  \end{tabular}
+\end{table}
+
 ## ビルド
+
+プロセス処理の記述が完了したら、デスクリプタの[Build]ボタンによりビルドを実行する。
+一度ビルドしたアルゴリズムについても編集の都度ビルドボタンをクリックすることでアルゴリズムを更新できる。
+ビルド時はダイアログが出現し、プロセス処理の記述に含まれるエラーやシステムファイルのバージョンエラーが表示される。
+エラーが生じた場合、システムは直前のビルド成功後の状態から更新されない。
+ビルド成功時のダイアログを図\ref{fig:build-completd}に示す。
+
+![ビルド成功時の様子]
 
 # シミュレーション
 
 ## シミュレーションの開始
+
+シミュレーションの開始は以下の手順で行う。
+
+1. 
 
 ## イベントの実行
 
