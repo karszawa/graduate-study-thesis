@@ -158,3 +158,5 @@ $P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le 
 	\includegraphics[width=0.5\linewidth]{./src/fig/direct-dependency-clock.eps}
 	\caption{Direct-Dependency Clockの実行例 \label{fig:direct-dependency-clock}}
 \end{figure}
+
+<!-- コータリー -->
