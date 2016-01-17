@@ -19,6 +19,11 @@ H-DASは、アルゴリズムを記述するためのデスクリプタとシミ
 すると図\ref{fig:startup}の起動画面が呼び出される。
 
 ![起動画面]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\linewidth]{./src/fig/startup.eps}
+	\caption{H-DASの起動画面 \label{fig:startup}}
+\end{figure}
 
 シミュレータを起動する場合には[Simulator]を、デスクリプタを起動する際には[Descriptor]をクリックすればよいが、その前にConfigure Pathsで設定をする必要がある。
 図\ref{fig:configure-paths}はパスの設定画面である。
@@ -26,19 +31,36 @@ H-DASは、アルゴリズムを記述するためのデスクリプタとシミ
 なおtools.jarはデスクリプタで、dasファイルのあるディレクトリはシミュレータでしか使わないので、どちらか片方しか使用しない場合は使わない方の設定はしなくても問題ない。
 
 ![Configure Paths]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/configure-paths.eps}
+	\caption{Configure Paths \label{fig:configure-paths}}
+\end{figure}
 
 # 分散アルゴリズムの記述
 
 ## モデル情報の入力
 
-分散アルゴリズムの記述に使用するデスクリプタの初期画面を図\ref{fig:initial-descriptor}に示す。
+分散アルゴリズムの記述に使用するデスクリプタの初期画面を図\ref{fig:descriptor-startup}に示す。
 
 ![デスクリプタの初期画面]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/descriptor-startup.eps}
+	\caption{デスクリプタの初期画面 \label{fig:descriptor-startup}}
+\end{figure}
 
 メニューから[File]→[New]を選択し、出現するダイアログでシステムディレクトリを指定する。
 次に出現するダイアログでは作成するアルゴリズムのシステム名を入力する。
 そうすると、図\ref{fig:descriptor-inuse}のような画面になる。
 ここで、画面左のツリーからノードを選択すると、画面右にモデル情報タブが表示されるので、画面下部の[Add]、[Modify]、[Delete]ボタンからモデル情報を編集する。
+
+![デスクリプタの使用画面]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/descriptor.eps}
+	\caption{デスクリプタの使用画面 \label{fig:descriptor-inuse}}
+\end{figure}
 
 モデルはアルゴリズムごとにVariableモデル、Stateモデル、Eventモデル、Parameterモデル、及びMessageモデルがある。
 Eventモデルの入力時に受信イベントで受信するメッセージの種別は、Messageモデルとして入力したものから選択することになる。
@@ -55,6 +77,11 @@ Parameterモデルのパラメータの変数の型として選択できるの�
 ユーザはプロセス処理の記述に移行する前に、入力したモデル情報に誤りがないかを確認するため、図\ref{fig:build-button}をクリックしビルドを実行することが推奨される。
 
 ![ビルドボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.2\linewidth]{./src/fig/build-button.eps}
+	\caption{ビルドボタン \label{fig:build-button}}
+\end{figure}
 
 ## プロセス処理の記述
 
@@ -105,6 +132,11 @@ public class xxxMessage extends WantResponse implements Serializable
 ビルド成功時のダイアログを図\ref{fig:build-completd}に示す。
 
 ![ビルド成功時の様子]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{./src/fig/build-completed.eps}
+	\caption{ビルド成功時の様子 \label{fig:build-completed}}
+\end{figure}
 
 # シミュレーション
 
@@ -125,10 +157,35 @@ public class xxxMessage extends WantResponse implements Serializable
 その状態の画面を図\ref{fig:simulator-in-simulation}に示す。
 
 ![新規シミュレーションボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.2\linewidth]{./src/fig/new-button.eps}
+	\caption{新規シミュレーションボタン \label{fig:new-button}}
+\end{figure}
 ![dasファイル選択ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/select-das-dialog.eps}
+	\caption{dasファイル選択ダイアログ \label{fig:select-das-dialog}}
+\end{figure}
 ![パラメータ入力ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/parameter-dialog.eps}
+	\caption{パラメータ入力ダイアログ \label{fig:parameter-dialog}}
+\end{figure}
 ![プロセスのパラメータ設定ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/use-same-configuration-dialog.eps}
+	\caption{プロセスのパラメータ設定ダイアログ \label{fig:use-same-configuration-dialog}}
+\end{figure}
 ![シミュレーション開始時のシミュレータの様子]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/simulator-in-simulation.eps}
+	\caption{シミュレーション開始時のシミュレータの様子 \label{fig:simulator-in-simulation}}
+\end{figure}
 
 ## イベントの実行
 
@@ -139,6 +196,11 @@ public class xxxMessage extends WantResponse implements Serializable
 3. ダイアログ下部の[Execute]をクリックして実行する。[Cancel]をクリックすると何もせずダイアログを閉じる。
 
 ![実行するイベントを選択するダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{./src/fig/select-event-dialog.eps}
+	\caption{実行するイベントを選択するダイアログ \label{fig:select-event-dialog}}
+\end{figure}
 
 プロセスはイベントを実行すると、アルゴリズムにしたがって自身の論理ベクトル時計を1進める。
 それと同時に仮想大域時計も1進む。本シミュレータにおいてメッセージ配送は通常、システムの仮想大域時計が進むことによって自動で行われる。
@@ -147,6 +209,11 @@ public class xxxMessage extends WantResponse implements Serializable
 この機能は\ref{fig:null-event-button}に示す[Execute a null event]ボタンをクリックするか、メニューで[Auto]→[Execute a null event]を選択することで利用できる。
 
 ![Execute a null eventボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.2\linewidth]{./src/fig/null-event-button.eps}
+	\caption{Execute a null eventボタン \label{fig:null-event-button}}
+\end{figure}
 
 # シミュレータの機能
 
@@ -160,7 +227,17 @@ public class xxxMessage extends WantResponse implements Serializable
 履歴からシミュレーションを行っているときは、進む機能を使用することができる。
 
 ![イベントを取り消すボタン群]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{./src/fig/undo-event.eps}
+	\caption{イベントを取り消すボタン群 \label{fig:undo-event}}
+\end{figure}
 ![取り消すイベント数を指定するダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{./src/fig/count-undo-event.eps}
+	\caption{取り消すイベント数を指定するダイアログ \label{fig:count-undo-event}}
+\end{figure}
 
 ## イベント生起の自動化機能
 
@@ -171,12 +248,27 @@ public class xxxMessage extends WantResponse implements Serializable
 3. ダイアログ下部の[Start]をクリックして自動化を開始する。
 
 ![Autoボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.2\linewidth]{./src/fig/auto-button.eps}
+	\caption{Autoボタン \label{fig:auto-button}}
+\end{figure}
 ![イベント生起の自動化設定ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\linewidth]{./src/fig/auto-dialog.eps}
+	\caption{イベント生起の自動化設定ダイアログ \label{fig:auto-dialog}}
+\end{figure}
 
 また、イベント生起の自動化を実行中に、意図的にイベント生起を止めたい場合には、図\ref{fig:stop-button}に示す[Stop]ボタンをクリックする。
 または、メニューから[Auto]→[Stop the execution]を選択する。
 
 ![Stopボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.2\linewidth]{./src/fig/stop-button.eps}
+	\caption{Stopボタン \label{fig:stop-button}}
+\end{figure}
 
 ## 実行したシミュレーションの保存・再生
 
@@ -205,12 +297,27 @@ public class xxxMessage extends WantResponse implements Serializable
 4. イベントを生起させ、シミュレーションを進める。
 
 ![Historyボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.2\linewidth]{./src/fig/history-button.eps}
+	\caption{Historyボタン \label{fig:history-button}}
+\end{figure}
 ![cmdファイル選択ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/select-cmd-dialog.eps}
+	\caption{cmdファイル選択ダイアログ \label{fig:select-cmd-dialog}}
+\end{figure}
 
-イベントを生起させるには、図\ref{execute-next-event}の[Execute a next event]ボタン、[Execute several next events]ボタン、
+イベントを生起させるには、図\ref{fig:execute-next-event}の[Execute a next event]ボタン、[Execute several next events]ボタン、
 [Execute all of next events]ボタンにより、それぞれ1つずつ、任意回数、すべてのイベントを実行することができる。
 
 ![コマンド履歴のイベントを実行するボタン群]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/execute-next-event.eps}
+	\caption{コマンド履歴のイベントを実行するボタン群 \label{fig:execute-next-event}}
+\end{figure}
 
 また、コマンド履歴からシミュレーションを再現しているときに[Event]セルからイベントを生起させると、新たな別のシミュレーションとみなされる。
 そのため、戻る機能を実行しておシミュレーションの再現に戻ることはできない。
@@ -226,14 +333,29 @@ public class xxxMessage extends WantResponse implements Serializable
 3. シミュレーションの新規開始と同様の設定を行う。
 
 ![Restartボタン]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/restart-button.eps}
+	\caption{Restartボタン \label{fig:restart-button}}
+\end{figure}
 ![シミュレーションの終了確認ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/restart-confirm-dialog.eps}
+	\caption{シミュレーションの終了確認ダイアログ \label{fig:restart-confirm-dialog}}
+\end{figure}
 
 ## デッドロックの検出機能
 
 デッドロックの検出機能は、シミュレーションを行っているとき自動で働いているため、特別な操作を行う必要はない。
-デッドロックを検出すると、図\ref{fig:stop-button}に示すダイアログが表示される。
+デッドロックを検出すると、図\ref{fig:deadlock-dialog}に示すダイアログが表示される。
 
 ![デッドロック検出ダイアログ]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\linewidth]{./src/fig/deadlock-dialog.eps}
+	\caption{デッドロック検出ダイアログ \label{fig:deadlock-dialog}}
+\end{figure}
 
 ## ヘルプマニュアル
 
