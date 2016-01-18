@@ -3,7 +3,7 @@ CD内のディレクトリ構造は図\ref{fig:directory}に示すとおりで�
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.4\linewidth]{./src/fig/directory.eps}
+	\includegraphics[width=0.5\linewidth]{./src/fig/directory.eps}
 	\caption{ディレクトリ構造 \label{fig:directory}}
 \end{figure}
 
