@@ -30,7 +30,7 @@ H-DASは平成18年から開発されてきたソフトウェアである。
 ## イベント発生回数の表示
 
 図\ref{fig:simulator-events}はシミュレータの上部を切り取ったものである。
-ここに表示されている# of events: [number]と書いてあるのがイベント数を表している。
+ここに表示されている`# of events: [number]`と書いてあるのがイベント数を表している。
 この数値はユーザがプロセスのイベントを実行するか空イベントを実行するかすると1ずつ上昇する。
 この数値はユーザの操作のたびに上昇するため、シミュレーションを開始してからどれほどの時間が経過したかを示す一つの目安となる。
 この数値を利用すれば、たとえば、実行したシミュレーションを保存しそれを履歴から再実行する際に、この数値を見て動作を確認したい箇所の目算をつけることなどができる。
@@ -38,7 +38,7 @@ H-DASは平成18年から開発されてきたソフトウェアである。
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\linewidth]{./src/fig/simulator-events.eps}
-	\caption{シミュレータ上部の`\#of events: `はイベントの発生回数を表している。 \label{fig:simulator-events}}
+	\caption{シミュレータ上部の\texttt{\#\ of\ events:\ {[}number{]}}はイベントの発生回数を表している。 \label{fig:simulator-events}}
 \end{figure}
 
 # 不具合修正
