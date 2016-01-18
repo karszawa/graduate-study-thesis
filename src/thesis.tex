@@ -5,8 +5,26 @@
 \usepackage{theorem}
 \usepackage{empheq}
 \usepackage[backend=bibtex, style=numeric]{biblatex}
+\usepackage{listings}
 
 \def\tightlist{} % for pandoc
+
+\def\lstlistingname{Code}
+\lstset{
+  language=C++,
+  caption=Code
+  classoffset=1,
+  basicstyle=\ttfamily\scriptsize,
+  frame=single,
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\tiny,
+  tabsize=2,
+  escapeinside={\%*}{*)]},
+  breaklines=true
+}
 
 \addbibresource{src/bibliography.bib}
 

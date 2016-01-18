@@ -5,7 +5,7 @@ name = "thesis"
 task :build do
   Dir.glob("src/*.md").map do |md|
     tex = md.sub(".md", ".tex")
-    `pandoc #{md} -f markdown -t latex --smart -o #{tex}`
+    `pandoc -f markdown -t latex --smart #{md} -o #{tex}`
   end
 	
   puts `latexmk src/#{name}.tex`
@@ -32,6 +32,6 @@ end
 task :eps do
   Dir.glob('src/fig/**/*.png').each do |png|
     eps = png.sub(".png", ".eps")
-    p `convert #{png} eps2:#{eps}`
+    `convert #{png} eps2:#{eps}`
   end
 end
