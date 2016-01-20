@@ -131,14 +131,14 @@ H-DASではプロセスを表すセルをプロセスの状態によって色付
 しかし従来のシミュレータでは特定の環境で色付けがなされないという問題があった。
 H-DASはJavaの実行環境のあるすべてのマシンで実行される可能性があると想定しているので、この不具合を修正する必要があった。
 
-結論から言うと、この問題の原因はjavax.swing.JComponentクラスのopaqueフラグにあった。
+結論から言うと、この問題の原因は`javax.swing.JComponent`クラスの`opaque`フラグにあった。
 このフラグはコンポーネントの背景を透過するかどうかを表している。
-シミュレータのセルはjavax.swing.JButtonクラスで表現しているが、一部の環境ではopaqueフラグがデフォルトでfalseになっているようだった。
+シミュレータのセルは`javax.swing.JButton`クラスで表現しているが、一部の環境では`opaque`フラグがデフォルトで`false`になっているようだった。
 
-この問題はセルの初期化時にopaqueフラグをtrueに設定することで簡単に解決できた。
+この問題はセルの初期化時に`opaque`フラグを`true`に設定することで簡単に解決できた。
 問題の解決前と解決後のシミュレータの画面を図\ref{fig:cell-opaque}に示す。
 
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.8\linewidth]{./src/fig/cell-opaque.eps}
 	\caption{シミュレータの画面 \label{fig:cell-opaque}}
