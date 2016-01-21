@@ -176,8 +176,6 @@ H-DASではMajority、Singleton、CWlogの3つのコータリーを使用でき�
 以下にそれぞれのコータリーと、CWlogの説明に用いるCrumbling Wallsというコータリーについて説明する。
 ただし$U$をプロセスの集合、$n$をプロセスの数とする。
 
-<!-- 例示したコータリーの詳細 -->
-
 Majority
 
 : サイズが$k = \lfloor n / 2 \rfloor$である$U$のすべての部分集合からなる集合
