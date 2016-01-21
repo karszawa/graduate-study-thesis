@@ -4,7 +4,8 @@
 \usepackage{amsmath, amssymb}
 \usepackage{theorem}
 \usepackage{empheq}
-\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\usepackage{url}
+\usepackage[backend=biber, style=numeric]{biblatex}
 \usepackage{listings}
 
 \def\tightlist{} % for pandoc
@@ -29,6 +30,8 @@
 \addbibresource{src/bibliography.bib}
 
 \begin{document}
+
+\input{src/font-definition.tex} % for font warning
 
 \input{src/0-title.tex}
 
@@ -59,6 +62,7 @@
 \nocite{*}
 \printbibliography[title=参考文献]
 \addcontentsline{toc}{chapter}{参考文献}
+% \input{src/bibliography.tex}
 
 \chapter*{付録A 付録CD}
 \addcontentsline{toc}{chapter}{付録A 付録CD}
