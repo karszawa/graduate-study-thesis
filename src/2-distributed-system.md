@@ -146,11 +146,7 @@ $P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le 
 実際に、$s_0$の後に$s_3$の状態になっているので、$clock_0[0] \le clock_1[0]$が成り立っている。
 どちらが因果的に先に生じたともいえない$s_2$と$s_3$では、$clock_2[2] \le clock_1[2]$も$clock_1[1] \le clock_2[1]$も成り立たない。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./src/fig/direct-dependency-clock.eps}
-	\caption{Direct-Dependency Clockの実行例 \label{fig:direct-dependency-clock}}
-\end{figure}
+![Direct-Dependency Clockの実行例](./src/fig/direct-dependency-clock.eps){width=0.5\linewidth}
 
 ## コータリー
 
@@ -192,8 +188,4 @@ CWlog
 
 : Crumbling Wallsの1つ。行に含まれるプロセスの個数が一番上の行から下の行にかけて対数的に増加する。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.6\linewidth]{./src/fig/crumbling-walls.eps}
-	\caption{Crumbling Wallsの例 \label{fig:crumbling-walls}} 
-\end{figure}
+![Crumbling Wallsの例](./src/fig/crumbling-walls.eps){width=0.6\linewidth}

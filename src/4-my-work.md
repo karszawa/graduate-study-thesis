@@ -15,17 +15,9 @@ H-DASは平成18年から開発されてきたソフトウェアである。
 図\ref{fig:presimulation-window-new}は改良されたシミュレータの統合された設定画面である。
 このように、シミュレーションを開始する際の設定項目は一目瞭然となった。
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/presimulation-windows-old.eps}
-	\caption{従来のシミュレータで入力する必要のあったウィンドウの一覧 \label{fig:presimulation-windows-old}}
-\end{figure}
+![従来のシミュレータで入力する必要のあったウィンドウの一覧](./src/fig/presimulation-windows-old.eps){width=0.8\linewidth}
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/presimulation-window-new.eps}
-	\caption{改良されたシミュレータで1つに統合された設定画面 \label{fig:presimulation-window-new}}
-\end{figure}
+![改良されたシミュレータで1つに統合された設定画面](./src/fig/presimulation-window-new.eps){width=0.8\linewidth}
 
 ## イベント発生回数の表示
 
@@ -35,11 +27,7 @@ H-DASは平成18年から開発されてきたソフトウェアである。
 この数値はユーザの操作のたびに上昇するため、シミュレーションを開始してからどれほどの時間が経過したかを示す一つの目安となる。
 この数値を利用すれば、たとえば、実行したシミュレーションを保存しそれを履歴から再実行する際に、この数値を見て動作を確認したい箇所の目算をつけることなどができる。
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/simulator-events.eps}
-	\caption{シミュレータ上部の\texttt{\#\ of\ events:\ {[}number{]}}はイベントの発生回数を表している。 \label{fig:simulator-events}}
-\end{figure}
+![シミュレータ上部の\texttt{\#\ of\ events:\ {[}number{]}}はイベントの発生回数を表している。](./src/fig/simulator-events.eps){width=0.8\linewidth}
 
 # 不具合修正
 
@@ -103,11 +91,7 @@ $m_i$が発生すると同時に生成された値よりも小さくなること
 
 図\ref{fig:fifo-delay-constraint}にプロセス$P_i$から$P_j$に向けて送られるメッセージの様子を示す。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/fifo-delay-constraint.eps}
-	\caption{プロセス$P_i$からプロセス$P_j$に向けて送られるメッセージの様子 \label{fig:fifo-delay-constraint}}
-\end{figure}
+![プロセス$P_i$からプロセス$P_j$に向けて送られるメッセージの様子](./src/fig/fifo-delay-constraint.eps){width=0.8\linewidth}
 
 ## 大量のプロセスからなるシステムをシミュレートする際に実行速度が極度に低下する不具合 
 
@@ -138,8 +122,4 @@ H-DASはJavaの実行環境のあるすべてのマシンで実行される可�
 この問題はセルの初期化時に`opaque`フラグを`true`に設定することで簡単に解決できた。
 問題の解決前と解決後のシミュレータの画面を図\ref{fig:cell-opaque}に示す。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/cell-opaque.eps}
-	\caption{シミュレータの画面 \label{fig:cell-opaque}}
-\end{figure}
+![シミュレータの画面](./src/fig/cell-opaque.eps){width=0.8\linewidth}

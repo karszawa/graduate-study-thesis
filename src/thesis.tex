@@ -10,6 +10,8 @@
 
 \def\tightlist{} % for pandoc
 
+\hfuzz=6pt % ignore overfull hbox warning
+
 \def\lstlistingname{Code}
 \lstset{
   language=C++,
@@ -31,7 +33,7 @@
 
 \begin{document}
 
-\input{src/font-definition.tex} % for font warning
+\input{src/font-definition.tex} % ignore latex font warning
 
 \input{src/0-title.tex}
 

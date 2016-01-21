@@ -59,11 +59,7 @@ Graphics on/off
 - イベントの実行履歴のテキスト表示
 - プロセスの関係のグラフ化(一部のアルゴリズムに限られる)
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/daj.eps}
-	\caption{DAJの外観 \label{fig:daj}}
-\end{figure}
+![DAJの外観](./src/fig/daj.eps){width=0.8\linewidth}
 
 # 本研究室で開発されてきた分散アルゴリズムシミュレータ
 
@@ -78,22 +74,14 @@ H-DASは分散アルゴリズムを記述するためのデスクリプタとい
 3. アルゴリズムの実装
 4. ビルド
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/descriptor.eps}
-	\caption{H-DASのDescriptorの外観 \label{fig:descriptor}}
-\end{figure}
+![H-DASのDescriptorの外観](./src/fig/descriptor.eps){width=0.8\linewidth}
 
 図\ref{fig:simulator}はシミュレータの外観である。
 このプログラムでデスクリプタにより生成したdasファイルを読み込みシミュレーションを開始する。
 3.3.1項で簡単に機能の紹介を行う。
 詳細な使用方法の説明は第5章で行う。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\linewidth]{./src/fig/simulator.eps}
-	\caption{H-DASのSimulatorの外観 \label{fig:simulator}}
-\end{figure}
+![H-DASのSimulatorの外観](./src/fig/simulator.eps){width=0.8\linewidth}
 
 ## 機能
 
