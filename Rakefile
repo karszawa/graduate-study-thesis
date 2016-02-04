@@ -33,7 +33,9 @@ task :latex do latex end
 
 task :clean do
 	Dir.glob("src/*.preprocessed.md").map do |md|
+    tex = md.sub(".md", ".tex")
 		`rm #{md}` if File.exist?(md)
+		`rm #{tex}` if File.exist?(tex)
 	end
 	
   Dir.glob("src/*.md").map do |md|

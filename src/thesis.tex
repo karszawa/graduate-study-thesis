@@ -5,12 +5,14 @@
 \usepackage{theorem}
 \usepackage{empheq}
 \usepackage{url}
-\usepackage[backend=biber, style=numeric]{biblatex}
+% \usepackage[backend=biber, style=numeric]{biblatex}
 \usepackage{listings}
 
 \def\tightlist{} % for pandoc
 
 \hfuzz=6pt % ignore overfull hbox warning
+
+\renewcommand{\bibname}{参考文献}
 
 \def\lstlistingname{Code}
 \lstset{
@@ -29,7 +31,7 @@
   breaklines=true
 }
 
-\addbibresource{src/bibliography.bib}
+% \addbibresource{src/bibliography.bib}
 
 \begin{document}
 
@@ -62,7 +64,8 @@
 \input{src/6-conclusion.tex}
 
 \nocite{*}
-\printbibliography[title=参考文献]
+% \printbibliography[title=参考文献]
+\input{src/bibliography.tex}
 \addcontentsline{toc}{chapter}{参考文献}
 
 % \appendix
@@ -70,5 +73,6 @@
 \chapter*{付録A 付録CD}
 \addcontentsline{toc}{chapter}{付録A 付録CD}
 \input{src/7-appendix.tex}
+
 
 \end{document}

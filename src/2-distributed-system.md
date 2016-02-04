@@ -159,7 +159,7 @@ $P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le 
 
 $U$をプロセスの集合とし、以下の2条件を満たす$U$の部分集合$Q_i$(コーラムと呼ばれる)の集合をコータリーと呼ぶ。
 
-1. すべての対$i$と$j(1 \leq i,j \leq N)$に対して、$Q_i \cap Q_j \neq \fi$
+1. すべての対$i$と$j(1 \leq i,j \leq N)$に対して、$Q_i \cap Q_j \neq \phi$
 2. すべての対$i$と$j(1 \leq i,j \leq N, i \neq j)$に対して、$Q_i \nsubseteq Q_j$
 
 コータリー$C$を用いた相互排除では、プロセスはあるコーラム$Q \in C$に含まれるすべてのプロセスから資源の使用許可を得る必要がある。
@@ -188,6 +188,6 @@ Crumbling Walls
 
 CWlog
 
-: Crumbling Wallsの1つ。行に含まれるプロセスの個数が$i$行では$\log_2 i$個と、一番上の行から下の行にかけて対数的に増加する。
+: Crumbling Wallsの1つ。行に含まれるプロセスの個数が$i$行では$\log_2 2i$個と、一番上の行から下の行にかけて対数的に増加する。
 
 ![Crumbling Wallsの例](./src/fig/crumbling-walls.eps){width=0.6\linewidth}
