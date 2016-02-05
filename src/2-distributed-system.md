@@ -103,7 +103,7 @@ Potential Causality Modelの1つの計算結果は有限個のHappened Before Mo
 
 <!-- https://books.google.co.jp/books?id=2pKCnc6-UAEC -->
 
-\begin{lstlisting}[language=Java, caption=Direct Dependency Clock]
+\begin{lstlisting}[language=Java, caption=Direct-Dependency Clock]
 public class DirectDependencyClock {
 	public int[] clock;
 	int myId;
@@ -136,14 +136,20 @@ public class DirectDependencyClock {
 }
 \end{lstlisting}
 
-論理時計にDirect-Dependency Clockを用いるならば、プロセスのクラスはDirectDependencyClockクラスをメンバに持つことになる。
+論理時計にDirect-Dependency Clockを用いるならば、プロセスのクラスは`DirectDependencyClock`クラスをメンバに持つ。
+プロセスは内部イベント(メッセージの送信・受信を伴わないイベント)を実行するとき`DirectDepandencyClock`クラスの`tick`メソッドを実行し、
+送信イベントを実行する際には`sendAction`メソッドを、受信イベントを実行する際には`receive`メソッドを実行させる。
+
 この時計を用いるとき、状態$s$にあるプロセス$P_i$と状態$t$にあるプロセス$P_j$を考え、状態$t$は状態$s$より因果的に後の状態なのかどうかを知りたければ、
-$P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le clock_j[i]$が成り立つかどうかを見れば良い。
+$P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le clock_j[i]$が成り立つかどうかを見ればよい。
 もちろん、状態$s$が状態$t$より因果的に後の状態なのであれば、$clock_j[j] \le clock_i[j]$が成り立つ。
 どちらも成り立たないというときは状態$s$と状態$t$は因果的に関係ない状態ということである。
 
 図\ref{fig:direct-dependency-clock}はDirect Dependency Clockの実行例である。
-実際に、$s_0$の後に$s_3$の状態になっているので、$clock_0[0] \le clock_1[0]$が成り立っている。
+黒点の上の$(x,y,z)$は各プロセスのその時点での論理時計の内容を表している。
+つまり$s_0$の上のものは$clock_0[0]=1,clock_0[1]=0,clock_0[2]$=0ということ表している。
+また、ななめの矢印はメッセージ送信を表しており、そのラベルはメッセージに付加される時刻印である。
+この例では、$s_0$の後に$s_3$の状態になっているので、$clock_0[0] \le clock_1[0]$が成り立っている。
 どちらが因果的に先に生じたともいえない$s_2$と$s_3$では、$clock_2[2] \le clock_1[2]$も$clock_1[1] \le clock_2[1]$も成り立たない。
 
 <!-- 詳しく -->
@@ -184,7 +190,7 @@ Singleton
 
 Crumbling Walls
 
-: プロセスをいくつかの行に分けて、その行を縦に並べる。ただし行の長さはそれぞれ違っても良い。コーラムは、ある行に含まれるすべてのプロセスに、その行の下にあるすべて行から1つずつプロセスを加えて構成される(図\ref{fig:crumbling-walls})。
+: プロセスをいくつかの行に分けて、その行を縦に並べる。ただし行の長さはそれぞれ違ってもよい。コーラムは、ある行に含まれるすべてのプロセスに、その行の下にあるすべて行から1つずつプロセスを加えて構成される(図\ref{fig:crumbling-walls})。
 
 CWlog
 
