@@ -152,8 +152,6 @@ $P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le 
 この例では、$s_0$の後に$s_3$の状態になっているので、$clock_0[0] \le clock_1[0]$が成り立っている。
 どちらが因果的に先に生じたともいえない$s_2$と$s_3$では、$clock_2[2] \le clock_1[2]$も$clock_1[1] \le clock_2[1]$も成り立たない。
 
-<!-- 詳しく -->
-
 ![Direct-Dependency Clockの実行例](./src/fig/direct-dependency-clock.eps){width=0.5\linewidth}
 
 ## コータリー
