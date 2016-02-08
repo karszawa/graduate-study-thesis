@@ -4,10 +4,15 @@
 \usepackage{amsmath, amssymb}
 \usepackage{theorem}
 \usepackage{empheq}
-\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\usepackage{url}
+% \usepackage[backend=biber, style=numeric]{biblatex}
 \usepackage{listings}
 
 \def\tightlist{} % for pandoc
+
+\hfuzz=6pt % ignore overfull hbox warning
+
+\renewcommand{\bibname}{参考文献}
 
 \def\lstlistingname{Code}
 \lstset{
@@ -26,9 +31,11 @@
   breaklines=true
 }
 
-\addbibresource{src/bibliography.bib}
+% \addbibresource{src/bibliography.bib}
 
 \begin{document}
+
+\input{src/font-definition.tex} % ignore latex font warning
 
 \input{src/0-title.tex}
 
@@ -57,11 +64,15 @@
 \input{src/6-conclusion.tex}
 
 \nocite{*}
-\printbibliography[title=参考文献]
+% \printbibliography[title=参考文献]
+\input{src/bibliography.tex}
 \addcontentsline{toc}{chapter}{参考文献}
 
+% \appendix
+% \chapter{付録CD}
 \chapter*{付録A 付録CD}
 \addcontentsline{toc}{chapter}{付録A 付録CD}
 \input{src/7-appendix.tex}
+
 
 \end{document}

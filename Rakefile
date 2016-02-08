@@ -2,9 +2,16 @@ task :default => ["build", 'clean']
 
 NAME = "thesis"
 
-def pandoc
+def preprocess
 	Dir.glob("src/*.md").map do |md|
-    tex = md.sub(".md", ".tex")
+    preprocessed = md.sub(".md", ".preprocessed.md")
+		`ruby preprocess.rb #{md} -o #{preprocessed}`
+  end
+end
+
+def pandoc
+	Dir.glob("src/*.preprocessed.md").map do |md|
+    tex = md.sub(".preprocessed.md", ".tex")
     `pandoc -f markdown -t latex --smart #{md} -o #{tex}`
   end
 end
@@ -15,14 +22,22 @@ def latex
 end
 
 task :build do
+	preprocess
 	pandoc
   latex
 end
 
+task :preprocess do preprocess end
 task :pandoc do pandoc end
 task :latex do latex end
 
 task :clean do
+	Dir.glob("src/*.preprocessed.md").map do |md|
+    tex = md.sub(".md", ".tex")
+		`rm #{md}` if File.exist?(md)
+		`rm #{tex}` if File.exist?(tex)
+	end
+	
   Dir.glob("src/*.md").map do |md|
     tex = md.sub(".md", ".tex")
 		`rm #{tex}` if md != 'src/thesis.tex' and File.exist?(tex)

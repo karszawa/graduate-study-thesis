@@ -1,11 +1,7 @@
 付録CDにH-DASのクラスファイル、ソースファイル、及びサンプルアルゴリズムのソースファイルを収録した。
 CD内のディレクトリ構造は図\ref{fig:directory}に示すとおりである。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.5\linewidth]{./src/fig/directory.eps}
-	\caption{ディレクトリ構造 \label{fig:directory}}
-\end{figure}
+![ディレクトリ構造](./src/fig/directory.eps){width=0.5\linewidth}
 
 binディレクトリにはクラスファイルが、srcディレクトリにはソースファイルが格納されている。
 クラスファイルとソースファイルはパッケージ構造に対応したディレクトリ構造で格納されているが、図では省略している。
