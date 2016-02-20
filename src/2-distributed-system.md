@@ -46,7 +46,7 @@ Interleaving Model
 
 : 分散システム上で生起するすべてのイベントの間に全順序が定まる。
 
-Happend Before Model
+Happened Before Model
 
 : 異なるプロセスで生起するすべてのイベントの間に半順序が、同一のプロセスで生起するすべてのイベントの間に全順序が定まる。
 
@@ -55,7 +55,7 @@ Potential Causality Model
 : 分散システム上で生起するすべてのイベントの間に半順序が定まる。
 
 H-DASではInterleaving Modelを採用している。
-Happend Before ModelやPotential Causality Modelの分散計算もInterleaving Modelを用いて実現可能である。
+Happened Before ModelやPotential Causality Modelの分散計算もInterleaving Modelを用いて実現可能である。
 なぜなら、Happened Before Modelの1つの計算結果は有限個のInterleaving Modelによる計算結果と等価であり、
 Potential Causality Modelの1つの計算結果は有限個のHappened Before Modelによる計算結果と等価であるからである。
 
