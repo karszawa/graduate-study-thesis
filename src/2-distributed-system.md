@@ -46,7 +46,7 @@ Interleaving Model
 
 : 分散システム上で生起するすべてのイベントの間に全順序が定まる。
 
-Happend Before Model
+Happened Before Model
 
 : 異なるプロセスで生起するすべてのイベントの間に半順序が、同一のプロセスで生起するすべてのイベントの間に全順序が定まる。
 
@@ -55,7 +55,7 @@ Potential Causality Model
 : 分散システム上で生起するすべてのイベントの間に半順序が定まる。
 
 H-DASではInterleaving Modelを採用している。
-Happend Before ModelやPotential Causality Modelの分散計算もInterleaving Modelを用いて実現可能である。
+Happened Before ModelやPotential Causality Modelの分散計算もInterleaving Modelを用いて実現可能である。
 なぜなら、Happened Before Modelの1つの計算結果は有限個のInterleaving Modelによる計算結果と等価であり、
 Potential Causality Modelの1つの計算結果は有限個のHappened Before Modelによる計算結果と等価であるからである。
 
@@ -69,7 +69,7 @@ Potential Causality Modelの1つの計算結果は有限個のHappened Before Mo
 
 分散アルゴリズムを実行中のプロセスの状態は、命令を実行中の実行状態と、他のプロセスからのメッセージを待っている待機状態の2つに分けられる。
 分散アルゴリズムの実行は、1つ以上のプロセスが自発的に処理を始めることによって開始される。
-自発的に処理を始めるプロセスのこと始動プロセスという。
+自発的に処理を始めるプロセスのことを始動プロセスという。
 始動プロセス以外のプロセスは他のプロセスからのメッセージを受け取ってからアルゴリズムの実行を開始する。
 
 ## 分散アルゴリズムの評価
@@ -150,7 +150,7 @@ $P_i$の時計を$clock_i$、$P_j$の時計を$clock_j$とし、$clock_i[i] \le 
 つまり$s_0$の上のものは$clock_0[0]=1,clock_0[1]=0,clock_0[2]$=0ということ表している。
 また、ななめの矢印はメッセージ送信を表しており、そのラベルはメッセージに付加される時刻印である。
 この例では、$s_0$の後に$s_3$の状態になっているので、$clock_0[0] \le clock_1[0]$が成り立っている。
-どちらが因果的に先に生じたともいえない$s_2$と$s_3$では、$clock_2[2] \le clock_1[2]$も$clock_1[1] \le clock_2[1]$も成り立たない。
+どちらが因果的に先に生じたともいえない$s_2$と$s_3$では、$clock_2[2] \le clock_3[2]$も$clock_3[1] \le clock_2[1]$も成り立たない。
 
 ![Direct-Dependency Clockの実行例](./src/fig/direct-dependency-clock.eps){width=0.5\linewidth}
 
@@ -192,6 +192,6 @@ Crumbling Walls
 
 CWlog
 
-: Crumbling Wallsの1つ。行に含まれるプロセスの個数が$i$行では$\log_2 2i$個と、一番上の行から下の行にかけて対数的に増加する。
+: Crumbling Wallsの1つ。行に含まれるプロセスの個数が$i$行では$\lfloor \log_2 2i \rfloor$個と、一番上の行から下の行にかけて対数的に増加する。
 
 ![Crumbling Wallsの例](./src/fig/crumbling-walls.eps){width=0.6\linewidth}
